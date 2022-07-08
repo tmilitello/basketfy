@@ -4,11 +4,15 @@
     |
     <router-link to="/signup">Signup</router-link>
     |
+    <router-link to="/login">Login</router-link>
+    |
     <router-link to="/baskets/create">Create Basket</router-link>
     |
     <router-link to="/baskets">View Baskets</router-link>
     |
     <router-link to="/users">My Profile</router-link>
+    |
+    <router-link to="/logout">Logout</router-link>
   </nav>
   <router-view />
 </template>

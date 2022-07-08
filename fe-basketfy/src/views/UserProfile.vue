@@ -4,18 +4,19 @@ import axios from "axios";
 export default {
   data: function () {
     return {
-      message: "View Baskets",
-      baskets: [],
+      message: "My Profile",
+      user: {},
     };
   },
   created: function () {
     this.indexBaskets();
   },
+
   methods: {
     indexBaskets: function () {
-      axios.get("/baskets.json").then((response) => {
-        console.log("indexing baskets");
-        this.baskets = response.data;
+      axios.get("/users.json").then((response) => {
+        console.log("showing user");
+        this.user = response.data;
       });
     },
   },
@@ -26,11 +27,7 @@ export default {
   <div class="home">
     <h1>{{ message }}</h1>
     <div>
-      <div v-for="basket in baskets" v-bind:key="basket.id">
-        <div v-if="basket.asset_baskets.length > 0">
-          {{ basket }}
-        </div>
-      </div>
+      <p>{{ user }}</p>
     </div>
   </div>
 </template>
