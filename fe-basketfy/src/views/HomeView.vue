@@ -1,9 +1,7 @@
 <script>
 export default {
   data: function () {
-    return {
-      message: "Thematic Baskets",
-    };
+    return {};
   },
   created: function () {},
   methods: {},

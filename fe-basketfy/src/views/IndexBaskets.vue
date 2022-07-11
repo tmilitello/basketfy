@@ -24,7 +24,6 @@ export default {
 
 <template>
   <div class="home">
-    <h1>{{ message }}</h1>
     <div>
       <div v-for="basket in baskets" v-bind:key="basket.id">
         <div v-if="basket.asset_baskets.length > 0">
