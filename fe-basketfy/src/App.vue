@@ -1,5 +1,15 @@
 <template>
-  <!-- Navbar STart -->
+  <!-- Loader -->
+  <!-- <div id="preloader">
+    <div id="status">
+      <div class="spinner">
+        <div class="double-bounce1"></div>
+        <div class="double-bounce2"></div>
+      </div>
+    </div>
+  </div> -->
+  <!-- Loader -->
+  <!-- Navbar Start -->
   <header id="topnav" class="defaultscroll sticky">
     <div class="container">
       <!-- Logo Start-->
@@ -72,20 +82,6 @@
             </ul>
           </li>
 
-          <!-- <router-link to="/">Home</router-link>
-  |
-  <router-link to="/signup">Signup</router-link>
-  |
-  <router-link to="/login">Login</router-link>
-  |
-  <router-link to="/baskets/create">Create Basket</router-link>
-  |
-  <router-link to="/baskets">View Baskets</router-link>
-  |
-  <router-link to="/users">My Profile</router-link>
-  |
-  <router-link to="/logout">Logout</router-link> -->
-
           <li class="has-submenu parent-parent-menu-item">
             <a href="javascript:void(0)">Pages</a>
             <span class="menu-arrow"></span>
@@ -115,7 +111,7 @@
                   <li><a href="reset-password.html" class="sub-menu-item">Reset Password</a></li>
                 </ul>
               </li>
-              <li><a href="comingsoon.html" class="sub-menu-item">Comingsoon</a></li>
+              <li><a href="comingsoon.html" class="sub-menu-item">Coming soon</a></li>
             </ul>
           </li>
           <li><a href="index-nft.html" target="_blank" class="sub-menu-item">NFT Marketplace</a></li>

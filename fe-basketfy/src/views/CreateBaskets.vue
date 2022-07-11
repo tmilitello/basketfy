@@ -33,7 +33,6 @@ export default {
 <template>
   <div class="home">
     <div>
-      <h1>Create Basket</h1>
       <ul>
         <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
       </ul>
