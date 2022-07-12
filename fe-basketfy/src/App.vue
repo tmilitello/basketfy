@@ -10,7 +10,7 @@
   </div> -->
   <!-- Loader -->
   <!-- Navbar Start -->
-  <header id="topnav" class="defaultscroll sticky">
+  <header id="topnav" class="defaultscroll sticky custom-background">
     <div class="container">
       <!-- Logo Start-->
       <a class="logo" href="index.html">
@@ -346,8 +346,6 @@
                   Institutional Investor?
                   <a href="#" class="text-foot fw-medium">Learn More</a>
                 </small>
-
-                <img src="images/icon-gradient.png" class="avatar avatar-medium mt-4" alt="" />
               </div>
               <!--end col-->
             </div>
@@ -391,4 +389,8 @@
   <!-- Footer End -->
 </template>
 
-<style></style>
+<style>
+.custom-background {
+  background-color: #553880;
+}
+</style>

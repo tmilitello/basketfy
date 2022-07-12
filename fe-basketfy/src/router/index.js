@@ -7,6 +7,7 @@ import LoginView from "../views/LoginView.vue";
 import LogoutView from "../views/LogoutView.vue";
 import UserProfile from "../views/UserProfile.vue";
 import ShowBaskets from "../views/ShowBaskets.vue";
+import IndexAssets from "../views/IndexAssets.vue";
 
 const routes = [
   {
@@ -33,6 +34,11 @@ const routes = [
     path: "/baskets/create",
     name: "baskets-create",
     component: CreateBaskets,
+  },
+  {
+    path: "/assets",
+    name: "index-assets",
+    component: IndexAssets,
   },
 ];
 

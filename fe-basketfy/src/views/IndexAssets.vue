@@ -4,18 +4,16 @@ import axios from "axios";
 export default {
   data: function () {
     return {
-      message: "View Baskets",
-      baskets: [],
+      assets: [],
     };
   },
   created: function () {
-    this.indexBaskets();
+    this.searchAssets();
   },
   methods: {
-    indexBaskets: function () {
-      axios.get("/baskets.json").then((response) => {
-        console.log("indexing baskets");
-        this.baskets = response.data;
+    searchAssets: function () {
+      axios.get("/assets.json").then((response) => {
+        this.assets = response.data;
       });
     },
   },
@@ -47,30 +45,40 @@ export default {
                     Price
                   </th>
                   <th scope="col" class="fw-normal text-center text-muted py-4" style="width: 200px; min-width: 150px">
-                    Popularity
-                  </th>
-                  <th scope="col" class="fw-normal text-center text-muted py-4" style="width: 250px; min-width: 150px">
                     1 Week
                   </th>
-                  <th scope="col" class="fw-normal text-end text-muted py-4" style="width: 150px; min-width: 150px">
+                  <th scope="col" class="fw-normal text-center text-muted py-4" style="width: 250px; min-width: 150px">
+                    Popularity
+                  </th>
+                  <th
+                    scope="col"
+                    class="fw-normal text-end text-muted py-4 text-center"
+                    style="width: 150px; min-width: 150px"
+                  >
                     Tags
                   </th>
                 </tr>
               </thead>
 
               <tbody>
-                <tr v-for="basket in baskets" v-bind:key="basket.id">
+                <tr v-for="asset in assets" v-bind:key="asset.id">
                   <th class="py-3">
                     <a href="#!" class="align-items-center">
                       <img src="images/coin/bitcoin.png" class="me-3" height="32" alt="" />
                       <p class="mb-0 d-inline text-dark fw-normal h6">
-                        {{ basket.name }}
+                        {{ asset.name }}
                         <span class="text-muted">BTC</span>
                       </p>
                     </a>
                   </th>
                   <td class="text-center">
-                    <span class="badge rounded-md bg-soft-success">{{ basket.price }}</span>
+                    <div class="progress-box px-3">
+                      <small class="title text-muted mb-0">${{ asset.price }}</small>
+                    </div>
+                    <!--end process box-->
+                  </td>
+                  <td class="text-center">
+                    <span class="badge rounded-md bg-soft-success">1.5%</span>
                   </td>
                   <td class="text-center">
                     <ul class="list-unstyled text-warning mb-0">
@@ -82,20 +90,10 @@ export default {
                       <li class="list-inline-item mb-0 text-muted small">4.5</li>
                     </ul>
                   </td>
-                  <td class="text-center">
-                    <div class="progress-box px-3">
-                      <small class="title text-muted mb-0">${{ basket.price }}</small>
 
-                      <div class="progress rounded-md mt-2">
-                        <div
-                          class="progress-bar position-relative bg-gradient-primary rounded-md"
-                          style="width: 100%"
-                        ></div>
-                      </div>
-                    </div>
-                    <!--end process box-->
+                  <td class="text-center" v-for="tag in asset.tags" v-bind:key="tag.id">
+                    <span class="badge rounded-md bg-soft-success">{{ tag.name }}</span>
                   </td>
-                  <td class="text-muted text-end"></td>
                 </tr>
               </tbody>
             </table>
@@ -395,8 +393,4 @@ export default {
   <!-- End -->
 </template>
 
-<style>
-.nav-buffer {
-  padding-top: 90px;
-}
-</style>
+<style></style>
