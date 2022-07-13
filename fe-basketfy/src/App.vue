@@ -13,11 +13,10 @@
   <header id="topnav" class="defaultscroll sticky custom-background">
     <div class="container">
       <!-- Logo Start-->
-      <a class="logo" href="index.html">
-        <span class="logo-light-mode">
+      <a class="logo" href="/">
+        <span class="logo-color">
           <p>Basketfy</p>
         </span>
-        <img src="images/logo-light.png" class="logo-dark-mode" alt="" />
       </a>
       <!-- Logo end-->
 
@@ -159,17 +158,11 @@
           <div class="footer-py-100 footer-border-top">
             <div class="row">
               <div class="col-lg-4 col-12 mb-0 mb-md-4 pb-0 pb-md-2">
-                <a href="#" class="logo-footer">
-                  <img src="images/logo-light.png" alt="" />
-                </a>
+                <a href="#" class="logo-footer"></a>
                 <p class="text-foot mt-4">All Rights Reserved by Basketfy.io 2022</p>
                 <ul class="list-unstyled social-icon foot-social-icon mb-0 mt-4">
                   <li class="list-inline-item">
-                    <a
-                      href="https://wrapbootstrap.com/theme/upcrypto-nft-cryptocurrency-template-WB0580331?ref=shreethemesstudio"
-                      target="_blank"
-                      class="rounded"
-                    >
+                    <a>
                       <i class="uil uil-shopping-cart align-middle" title="Buy Now"></i>
                     </a>
                   </li>
@@ -391,5 +384,9 @@
 <style>
 .custom-background {
   background-color: #553880;
+}
+
+.logo-color {
+  color: rgb(93, 94, 94);
 }
 </style>

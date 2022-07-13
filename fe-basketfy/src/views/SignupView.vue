@@ -26,40 +26,137 @@ export default {
 
 <template>
   <div class="signup">
-    <form v-on:submit.prevent="submit()">
-      <h1>Signup</h1>
-      <ul>
-        <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
-      </ul>
-      <div>
-        <label>First Name:</label>
-        <input type="text" v-model="newUserParams.first_name" />
+    <!-- Start -->
+    <section class="section">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-9">
+            <div class="rounded shadow">
+              <div class="p-4 border-bottom">
+                <h5 class="mb-0">Sign up for Basketfy :</h5>
+              </div>
+
+              <div class="p-4">
+                <form v-on:submit.prevent="submit()">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <label class="form-label">First Name</label>
+                        <input
+                          name="name"
+                          id="name"
+                          type="text"
+                          class="form-control"
+                          v-model="newUserParams.first_name"
+                        />
+                      </div>
+                    </div>
+                    <!--end col-->
+
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <label class="form-label">Last Name</label>
+                        <input
+                          name="name"
+                          id="name2"
+                          type="text"
+                          class="form-control"
+                          v-model="newUserParams.last_name"
+                        />
+                      </div>
+                    </div>
+                    <!--end col-->
+
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <label class="form-label">Your Email</label>
+                        <input
+                          name="email"
+                          id="email"
+                          type="email"
+                          class="form-control"
+                          v-model="newUserParams.email"
+                        />
+                      </div>
+                    </div>
+                    <!--end col-->
+
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <label class="form-label">Username</label>
+                        <input
+                          name="number"
+                          id="number"
+                          type="text"
+                          class="form-control"
+                          placeholder="What others will see"
+                          v-model="newUserParams.username"
+                        />
+                      </div>
+                    </div>
+                    <!--end col-->
+
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <label class="form-label">Password</label>
+                        <input
+                          name="number"
+                          id="number"
+                          type="password"
+                          class="form-control"
+                          v-model="newUserParams.password"
+                        />
+                      </div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <label class="form-label">Age</label>
+                        <input
+                          name="number"
+                          id="number"
+                          type="text"
+                          class="form-control"
+                          placeholder="Optional - will help us compare investing styles"
+                          v-model="newUserParams.age"
+                        />
+                      </div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <label class="form-label">Password Confirmation</label>
+                        <input
+                          name="number"
+                          id="number"
+                          type="password"
+                          class="form-control"
+                          v-model="newUserParams.password_confirmation"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <!--end row-->
+
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <input type="submit" id="submit" name="send" class="btn btn-primary" value="Save changes" />
+                    </div>
+                    <!--end col-->
+                  </div>
+                  <!--end row-->
+                </form>
+                <!--end form-->
+              </div>
+            </div>
+          </div>
+          <!--end col-->
+        </div>
+        <!--end row-->
       </div>
-      <div>
-        <label>Last Name:</label>
-        <input type="text" v-model="newUserParams.last_name" />
-      </div>
-      <div>
-        <label>Email:</label>
-        <input type="email" v-model="newUserParams.email" />
-      </div>
-      <div>
-        <label>Username</label>
-        <input type="text" v-model="newUserParams.username" />
-      </div>
-      <div>
-        <label>Age</label>
-        <input type="text" v-model="newUserParams.age" />
-      </div>
-      <div>
-        <label>Password:</label>
-        <input type="password" v-model="newUserParams.password" />
-      </div>
-      <div>
-        <label>Password confirmation:</label>
-        <input type="password" v-model="newUserParams.password_confirmation" />
-      </div>
-      <input type="submit" value="Submit" />
-    </form>
+      <!--end container-->
+    </section>
+    <!--end section-->
+    <!-- End -->
   </div>
 </template>
