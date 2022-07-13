@@ -76,6 +76,7 @@
             <a href="/users">My Profile</a>
             <span class="menu-arrow"></span>
             <ul class="submenu">
+              <li><a href="/users" class="sub-menu-item">My Baskets</a></li>
               <li><a href="/signup" class="sub-menu-item">Sign Up</a></li>
               <li><a href="/login" class="sub-menu-item">Login</a></li>
               <li><a href="/logout" class="sub-menu-item">Logout</a></li>
@@ -161,9 +162,7 @@
                 <a href="#" class="logo-footer">
                   <img src="images/logo-light.png" alt="" />
                 </a>
-                <p class="text-foot mt-4">
-                  With Upcrypto Trade, you can be sure your trading skills are matched with excellent service.
-                </p>
+                <p class="text-foot mt-4">All Rights Reserved by Basketfy.io 2022</p>
                 <ul class="list-unstyled social-icon foot-social-icon mb-0 mt-4">
                   <li class="list-inline-item">
                     <a
@@ -339,8 +338,8 @@
                 <h5 class="text-light footer-head">Trade Baskets</h5>
 
                 <ul class="list-unstyled footer-list mt-4 mb-2">
-                  <li class="list-inline-item mx-1"><a href="#" class="btn btn-soft-primary">Signin</a></li>
-                  <li class="list-inline-item mx-1"><a href="#" class="btn btn-primary">Signup</a></li>
+                  <li class="list-inline-item mx-1"><a href="/signin" class="btn btn-soft-primary">Signin</a></li>
+                  <li class="list-inline-item mx-1"><a href="/signup" class="btn btn-primary">Signup</a></li>
                 </ul>
                 <small class="text-foot d-block">
                   Institutional Investor?

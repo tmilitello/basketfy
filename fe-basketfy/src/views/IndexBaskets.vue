@@ -29,7 +29,7 @@ export default {
       <div class="row">
         <div class="col-12">
           <div class="section-title mb-4">
-            <h4>All Assets</h4>
+            <h4>All Baskets</h4>
           </div>
         </div>
         <!--end col-->
@@ -47,12 +47,16 @@ export default {
                     Price
                   </th>
                   <th scope="col" class="fw-normal text-center text-muted py-4" style="width: 200px; min-width: 150px">
-                    Popularity
-                  </th>
-                  <th scope="col" class="fw-normal text-center text-muted py-4" style="width: 250px; min-width: 150px">
                     1 Week
                   </th>
-                  <th scope="col" class="fw-normal text-end text-muted py-4" style="width: 150px; min-width: 150px">
+                  <th scope="col" class="fw-normal text-center text-muted py-4" style="width: 250px; min-width: 150px">
+                    Popularity
+                  </th>
+                  <th
+                    scope="col"
+                    class="fw-normal text-end text-muted py-4 text-center"
+                    style="width: 150px; min-width: 150px"
+                  >
                     Tags
                   </th>
                 </tr>
@@ -65,12 +69,18 @@ export default {
                       <img src="images/coin/bitcoin.png" class="me-3" height="32" alt="" />
                       <p class="mb-0 d-inline text-dark fw-normal h6">
                         {{ basket.name }}
-                        <span class="text-muted">BTC</span>
+                        <!-- <span class="text-muted">BTC</span> -->
                       </p>
                     </a>
                   </th>
                   <td class="text-center">
-                    <span class="badge rounded-md bg-soft-success">{{ basket.price }}</span>
+                    <div class="progress-box px-3">
+                      <small class="title text-muted mb-0">${{ basket.price }}</small>
+                    </div>
+                    <!--end process box-->
+                  </td>
+                  <td class="text-center">
+                    <span class="badge rounded-md bg-soft-success">1.5%</span>
                   </td>
                   <td class="text-center">
                     <ul class="list-unstyled text-warning mb-0">
@@ -82,20 +92,10 @@ export default {
                       <li class="list-inline-item mb-0 text-muted small">4.5</li>
                     </ul>
                   </td>
-                  <td class="text-center">
-                    <div class="progress-box px-3">
-                      <small class="title text-muted mb-0">${{ basket.price }}</small>
 
-                      <div class="progress rounded-md mt-2">
-                        <div
-                          class="progress-bar position-relative bg-gradient-primary rounded-md"
-                          style="width: 100%"
-                        ></div>
-                      </div>
-                    </div>
-                    <!--end process box-->
+                  <td class="text-center" v-for="tag in basket.tags" v-bind:key="tag.id">
+                    <span class="badge rounded-md bg-soft-success">{{ tag.name }}</span>
                   </td>
-                  <td class="text-muted text-end"></td>
                 </tr>
               </tbody>
             </table>
@@ -138,8 +138,8 @@ export default {
         <div class="col-lg-3 col-md-6">
           <div class="card border-0 p-4 rounded shadow position-relative">
             <div class="d-flex justify-content-between align-items-center mb-3">
-              <img src="images/coin/bitcoin.png" class="avatar avatar-coin rounded-pill p-1 bg-success" alt="" />
-              <span class="text-muted fw-medium">BTC</span>
+              <!-- <img src="images/coin/bitcoin.png" class="avatar avatar-coin rounded-pill p-1 bg-success" alt="" /> -->
+              <!-- <span class="text-muted fw-medium">BTC</span> -->
             </div>
 
             <h6>Bitcoin</h6>

@@ -9,9 +9,12 @@
   },
   "dependencies": {
     "axios": "^0.27.2",
+    "bootstrap-autocomplete": "^2.3.7",
     "core-js": "^3.8.3",
     "vue": "^3.2.13",
-    "vue-router": "^4.0.3"
+    "vue-bootstrap-typeahead": "^0.2.6",
+    "vue-router": "^4.0.3",
+    "vue-typeahead-bootstrap": "^2.12.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",

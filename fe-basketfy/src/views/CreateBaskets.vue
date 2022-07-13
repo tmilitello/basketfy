@@ -1,7 +1,11 @@
 <script>
 import axios from "axios";
+import VueBootstrapTypeahead from "vue-bootstrap-typeahead";
 
 export default {
+  components: {
+    VueBootstrapTypeahead,
+  },
   data: function () {
     return {
       newBasketParams: { assets: [{ asset_id: "", weight: "", status: "active" }] },
@@ -16,7 +20,7 @@ export default {
     createBasket: function () {
       axios.post("/baskets.json", this.newBasketParams).then((response) => {
         console.log("created baskets", response);
-        this.$router.push("/baskets/" + response.data.id + ".json");
+        this.$router.push("/baskets/" + response.data.id);
       });
     },
     searchAssets: function () {
@@ -95,28 +99,35 @@ export default {
               </div>
             </div>
             <div class="subcribe-form mt-2 pt-1" v-for="asset in newBasketParams.assets" v-bind:key="asset.id">
-              <div class="text asset-name">
-                <input
-                  type="text"
-                  v-model="search"
-                  @input="onChange"
-                  id="course"
-                  name="name"
-                  class="rounded-lg bg-white opacity-4"
-                  placeholder="Search asset ticker (TSLA, BTC, ETH, GS)"
-                />
-              </div>
-              <div class="text asset-weighting">
-                <input
-                  type="text"
-                  id="course"
-                  name="name"
-                  class="rounded-lg bg-white opacity-4"
-                  placeholder="Asset Weighting (%)"
-                />
+              <div class="row">
+                <div class="text asset-name col-6">
+                  <input
+                    type="text"
+                    v-model="search"
+                    @input="onChange"
+                    id="course"
+                    name="name"
+                    class="rounded-lg bg-white opacity-4"
+                    placeholder="Search asset ticker (TSLA, BTC, ETH, GS)"
+                  />
+                </div>
+                <!-- <vue-bootstrap-typeahead v-model="query" :data="this.options" /> -->
+
+                <div class="text asset-weighting col-6">
+                  <input
+                    type="text"
+                    id="course"
+                    name="name"
+                    class="rounded-lg bg-white opacity-4"
+                    placeholder="Asset Weighting (%)"
+                  />
+                </div>
               </div>
             </div>
-            <button v-on:click="addAsset" class="btn btn-pills btn-primary">Add Another Asset</button>
+            <vue-typeahead-bootstrap v-model="query" :data="['Canada', 'United States', 'Mexico']" />
+            <button v-on:click="addAsset" class="btn btn-pills btn-primary add-asset">Add Another Asset</button>
+
+            <vue-bootstrap-typeahead v-model="query" :data="['Canada', 'USA', 'Mexico']" />
 
             <input type="submit" value="Create" v-on:click="createBasket()" class="btn btn-pills btn-primary" />
 
@@ -142,6 +153,10 @@ export default {
 
 <style>
 .asset-weighting {
-  padding-top: 15px;
+  padding-bottom: 20px;
+}
+
+.add-asset {
+  padding-right: 15px;
 }
 </style>
