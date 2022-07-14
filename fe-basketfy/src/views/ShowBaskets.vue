@@ -123,16 +123,12 @@ export default {
             </div>
             <div class="mt-6 justify-content-center">
               <div class="subcribe-form mt-4 pt-2">
-                <div class="row row-11" v-for="asset_basket in basket.asset_baskets" v-bind:key="asset_basket.id">
-                  <div>
-                    <span class="btn btn-primary m-1 asset-name">{{ asset_basket.asset.name }}</span>
-                  </div>
-                  <div>
-                    <span v-if="!isEdit" class="btn btn-primary m-1 asset-weight">
-                      {{ asset_basket.weight * 100 }} %
-                    </span>
-                  </div>
-                  <div v-if="isEdit">
+                <div class="row row-12" v-for="asset_basket in basket.asset_baskets" v-bind:key="asset_basket.id">
+                  <span class="col-md btn btn-primary m-1 asset-name">{{ asset_basket.asset.name }}</span>
+                  <span v-if="!isEdit" class="col-md btn btn-primary m-1 asset-weight">
+                    {{ asset_basket.weight * 100 }} %
+                  </span>
+                  <div class="col-md" v-if="isEdit">
                     <input class="btn btn-primary m-1 asset-weight" v-model="asset_basket.weight" />
                   </div>
                 </div>
