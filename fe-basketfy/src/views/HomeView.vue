@@ -21,7 +21,7 @@ export default {
             <h4 class="display-6 text-white fw-medium title-dark mb-4">
               The world’s first thematic investor platform
               <br />
-              to investigate what is moving markets
+              to explore what is moving markets
             </h4>
 
             <p class="text-white-50 para-desc">With Basketfy, discover what is moving your porfolio</p>

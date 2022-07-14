@@ -40,7 +40,7 @@ export default {
             <table class="table mb-0 table-center">
               <thead>
                 <tr>
-                  <th scope="col" class="fw-normal text-muted py-4" style="min-width: 250px">Name</th>
+                  <th scope="col" class="fw-normal text-center text-muted py-4" style="min-width: 250px">Name</th>
                   <th scope="col" class="fw-normal text-center text-muted py-4" style="width: 200px; min-width: 150px">
                     Price
                   </th>
@@ -64,10 +64,10 @@ export default {
                 <tr v-for="asset in assets" v-bind:key="asset.id">
                   <th class="py-3">
                     <a href="#!" class="align-items-center">
-                      <img src="images/coin/bitcoin.png" class="me-3" height="32" alt="" />
-                      <p class="mb-0 d-inline text-dark fw-normal h6">
+                      <!-- <img src="images/coin/bitcoin.png" class="me-3" height="32" alt="" /> -->
+                      <p class="mb-0 text-dark fw-normal h6 text-center">
                         {{ asset.name }}
-                        <span class="text-muted">BTC</span>
+                        <!-- <span class="text-muted">BTC</span> -->
                       </p>
                     </a>
                   </th>
@@ -136,11 +136,11 @@ export default {
         <div class="col-lg-3 col-md-6">
           <div class="card border-0 p-4 rounded shadow position-relative">
             <div class="d-flex justify-content-between align-items-center mb-3">
-              <img src="images/coin/bitcoin.png" class="avatar avatar-coin rounded-pill p-1 bg-success" alt="" />
-              <span class="text-muted fw-medium">BTC</span>
+              <!-- <img src="images/coin/bitcoin.png" class="avatar avatar-coin rounded-pill p-1 bg-success" alt="" /> -->
+              <!-- <span class="text-muted fw-medium">BTC</span> -->
             </div>
 
-            <h6>Bitcoin</h6>
+            <!-- <h6>Bitcoin</h6> -->
 
             <div class="d-flex justify-content-between align-items-center mt-2">
               <small class="text-success">+15.55%</small>

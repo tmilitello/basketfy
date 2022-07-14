@@ -22,6 +22,7 @@ export default {
         console.log("created baskets", response);
         this.$router.push("/baskets/" + response.data.id);
       });
+      // console.log(this.newBasketParams.assets);
     },
     searchAssets: function () {
       axios.get("/assets.json").then((response) => {
@@ -86,13 +87,13 @@ export default {
               <p class="para-desc mx-auto text-white-50">Explore and learn more about what is moving markets today</p>
             </div>
 
-            <div class="subcribe-form mt-4 pt-2">
+            <div class="subcribe-form mt-4 pt-2 basket-name">
               <div class="">
                 <input
                   type="text"
                   id="course"
                   name="name"
-                  class="rounded-lg bg-white opacity-4"
+                  class="rounded-lg bg-white opacity-9"
                   placeholder="Basket Name"
                   v-model="newBasketParams.name"
                 />
@@ -101,33 +102,33 @@ export default {
             <div class="subcribe-form mt-2 pt-1" v-for="asset in newBasketParams.assets" v-bind:key="asset.id">
               <div class="row">
                 <div class="text asset-name col-6">
-                  <input
-                    type="text"
-                    v-model="search"
-                    @input="onChange"
+                  <!-- {{ options }} -->
+                  <vue-bootstrap-typeahead
                     id="course"
                     name="name"
-                    class="rounded-lg bg-white opacity-4"
                     placeholder="Search asset ticker (TSLA, BTC, ETH, GS)"
+                    v-model="asset.asset_id"
+                    :data="options"
+                    :serializer="(s) => s.name"
+                    class="rounded-lg bg-white opacity-9"
+                    @hit="asset.asset_id = $event.id"
                   />
                 </div>
-                <!-- <vue-bootstrap-typeahead v-model="query" :data="this.options" /> -->
 
                 <div class="text asset-weighting col-6">
                   <input
                     type="text"
                     id="course"
                     name="name"
-                    class="rounded-lg bg-white opacity-4"
+                    class="rounded-lg bg-white opacity-9"
                     placeholder="Asset Weighting (%)"
+                    v-model="asset.weight"
                   />
                 </div>
               </div>
             </div>
-            <vue-typeahead-bootstrap v-model="query" :data="['Canada', 'United States', 'Mexico']" />
-            <button v-on:click="addAsset" class="btn btn-pills btn-primary add-asset">Add Another Asset</button>
 
-            <vue-bootstrap-typeahead v-model="query" :data="['Canada', 'USA', 'Mexico']" />
+            <button v-on:click="addAsset" class="btn btn-pills btn-primary add-asset">Add Another Asset</button>
 
             <input type="submit" value="Create" v-on:click="createBasket()" class="btn btn-pills btn-primary" />
 
@@ -158,5 +159,9 @@ export default {
 
 .add-asset {
   padding-right: 15px;
+}
+
+.basket-name {
+  padding-bottom: 20px;
 }
 </style>

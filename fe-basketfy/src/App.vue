@@ -29,7 +29,7 @@
             data-bs-target="#offcanvasRight"
             aria-controls="offcanvasRight"
           >
-            <div class="btn btn-icon btn-pills btn-primary"><i class="uil uil-user"></i></div>
+            <div class="btn btn-icon btn-pills btn-primary" href="/users"><i class="uil uil-user"></i></div>
           </a>
         </li>
       </ul>
@@ -83,7 +83,7 @@
           </li>
 
           <li class="has-submenu parent-parent-menu-item">
-            <a href="javascript:void(0)">Pages</a>
+            <a href="javascript:void(0)">About Basketfy</a>
             <span class="menu-arrow"></span>
             <ul class="submenu">
               <li><a href="aboutus.html" class="sub-menu-item">About Us</a></li>
@@ -111,7 +111,6 @@
                   <li><a href="reset-password.html" class="sub-menu-item">Reset Password</a></li>
                 </ul>
               </li>
-              <li><a href="comingsoon.html" class="sub-menu-item">Coming soon</a></li>
             </ul>
           </li>
           <li><a href="index-nft.html" target="_blank" class="sub-menu-item">NFT Marketplace</a></li>
@@ -361,7 +360,7 @@
           <div class="col-sm-4 mt-4 mt-sm-0">
             <div class="text-sm-end text-center">
               <a
-                href="#"
+                href="/users"
                 onclick="topFunction()"
                 id="back-to-top"
                 class="btn btn-pills btn-icon btn-primary back-to-top"
@@ -383,10 +382,14 @@
 
 <style>
 .custom-background {
-  background-color: #553880;
+  background-color: #aa65ee;
 }
 
 .logo-color {
-  color: rgb(93, 94, 94);
+  color: rgba(245, 245, 245, 0.883);
+}
+
+.logo {
+  padding-top: 20px;
 }
 </style>

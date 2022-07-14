@@ -25,138 +25,186 @@ export default {
 </script>
 
 <template>
-  <div class="signup">
-    <!-- Start -->
-    <section class="section">
+  <body>
+    <!-- Loader -->
+    <!-- <div id="preloader">
+            <div id="status">
+                <div class="spinner">
+                    <div class="double-bounce1"></div>
+                    <div class="double-bounce2"></div>
+                </div>
+            </div>
+        </div> -->
+    <!-- Loader -->
+
+    <section
+      class="bg-home d-flex align-items-center position-relative signup-box"
+      style="background: url('images/bg/user.jpg') center"
+    >
+      <div class="bg-overlay bg-gradient-primary opacity-8"></div>
       <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-9">
-            <div class="rounded shadow">
-              <div class="p-4 border-bottom">
-                <h5 class="mb-0">Sign up for Basketfy :</h5>
-              </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="form-signin p-4 bg-light rounded shadow-md">
+              <div>
+                <a href="index.html">
+                  <img src="images/icon-gradient.png" class="avatar avatar-md-md mb-4 d-block mx-auto" alt="" />
+                </a>
+                <h5 class="mb-3">Register your account</h5>
 
-              <div class="p-4">
-                <form v-on:submit.prevent="submit()">
-                  <div class="row">
-                    <div class="col-md-6">
-                      <div class="mb-3">
-                        <label class="form-label">First Name</label>
-                        <input
-                          name="name"
-                          id="name"
-                          type="text"
-                          class="form-control"
-                          v-model="newUserParams.first_name"
-                        />
-                      </div>
-                    </div>
-                    <!--end col-->
+                <div class="form-floating mb-2">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="floatingInput"
+                    placeholder="Thomas"
+                    v-model="newUserParams.first_name"
+                  />
+                  <label for="floatingInput">First Name</label>
+                </div>
 
-                    <div class="col-md-6">
-                      <div class="mb-3">
-                        <label class="form-label">Last Name</label>
-                        <input
-                          name="name"
-                          id="name2"
-                          type="text"
-                          class="form-control"
-                          v-model="newUserParams.last_name"
-                        />
-                      </div>
-                    </div>
-                    <!--end col-->
+                <div class="form-floating mb-2">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="floatingInput"
+                    placeholder="Militello"
+                    v-model="newUserParams.last_name"
+                  />
+                  <label for="floatingInput">Last Name</label>
+                </div>
 
-                    <div class="col-md-6">
-                      <div class="mb-3">
-                        <label class="form-label">Your Email</label>
-                        <input
-                          name="email"
-                          id="email"
-                          type="email"
-                          class="form-control"
-                          v-model="newUserParams.email"
-                        />
-                      </div>
-                    </div>
-                    <!--end col-->
+                <div class="form-floating mb-2">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="floatingInput"
+                    placeholder="Optional"
+                    v-model="newUserParams.username"
+                  />
+                  <label for="floatingInput">Username</label>
+                </div>
 
-                    <div class="col-md-6">
-                      <div class="mb-3">
-                        <label class="form-label">Username</label>
-                        <input
-                          name="number"
-                          id="number"
-                          type="text"
-                          class="form-control"
-                          placeholder="What others will see"
-                          v-model="newUserParams.username"
-                        />
-                      </div>
-                    </div>
-                    <!--end col-->
+                <div class="form-floating mb-2">
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="floatingEmail"
+                    placeholder="name@example.com"
+                    v-model="newUserParams.email"
+                  />
+                  <label for="floatingEmail">Email Address</label>
+                </div>
 
-                    <div class="col-md-6">
-                      <div class="mb-3">
-                        <label class="form-label">Password</label>
-                        <input
-                          name="number"
-                          id="number"
-                          type="password"
-                          class="form-control"
-                          v-model="newUserParams.password"
-                        />
-                      </div>
-                    </div>
+                <div class="form-floating mb-3">
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="floatingPassword"
+                    placeholder="Password"
+                    v-model="newUserParams.password"
+                  />
+                  <label for="floatingPassword">Password</label>
+                </div>
 
-                    <div class="col-md-6">
-                      <div class="mb-3">
-                        <label class="form-label">Age</label>
-                        <input
-                          name="number"
-                          id="number"
-                          type="text"
-                          class="form-control"
-                          placeholder="Optional - will help us compare investing styles"
-                          v-model="newUserParams.age"
-                        />
-                      </div>
-                    </div>
+                <div class="form-floating mb-3">
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="floatingPassword"
+                    placeholder="Password"
+                    v-model="newUserParams.password_confirmation"
+                  />
+                  <label for="floatingPassword">Password Confirmation</label>
+                </div>
 
-                    <div class="col-md-6">
-                      <div class="mb-3">
-                        <label class="form-label">Password Confirmation</label>
-                        <input
-                          name="number"
-                          id="number"
-                          type="password"
-                          class="form-control"
-                          v-model="newUserParams.password_confirmation"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <!--end row-->
+                <div class="form-check mb-3">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                  <label class="form-check-label text-muted" for="flexCheckDefault">
+                    I Accept
+                    <a href="#" class="text-primary">Terms And Condition</a>
+                  </label>
+                </div>
 
-                  <div class="row">
-                    <div class="col-sm-12">
-                      <input type="submit" id="submit" name="send" class="btn btn-primary" value="Save changes" />
-                    </div>
-                    <!--end col-->
-                  </div>
-                  <!--end row-->
-                </form>
-                <!--end form-->
+                <button class="btn btn-primary w-100" id="submit" type="submit" name="send" v-on:click="submit()">
+                  Register
+                </button>
+
+                <div class="col-12 text-center mt-3">
+                  <small>
+                    <small class="text-muted me-2">Already have an account ?</small>
+                    <a href="login.html" class="text-dark fw-medium">Sign in</a>
+                  </small>
+                </div>
               </div>
             </div>
           </div>
-          <!--end col-->
         </div>
-        <!--end row-->
       </div>
-      <!--end container-->
     </section>
-    <!--end section-->
-    <!-- End -->
-  </div>
+
+    <!-- Style switcher -->
+    <div id="style-switcher" class="bg-light border p-3 pt-2 pb-2" onclick="toggleSwitcher()">
+      <div>
+        <h6 class="title text-center">Select Your Color</h6>
+        <ul class="pattern">
+          <li class="list-inline-item">
+            <a class="color1" href="javascript:void(0);" onclick="setColor('default')"></a>
+          </li>
+          <li class="list-inline-item">
+            <a class="color2" href="javascript:void(0);" onclick="setColor('green')"></a>
+          </li>
+          <li class="list-inline-item">
+            <a class="color3" href="javascript:void(0);" onclick="setColor('purple')"></a>
+          </li>
+          <li class="list-inline-item">
+            <a class="color4" href="javascript:void(0);" onclick="setColor('red')"></a>
+          </li>
+          <li class="list-inline-item">
+            <a class="color5" href="javascript:void(0);" onclick="setColor('skobleoff')"></a>
+          </li>
+          <li class="list-inline-item">
+            <a class="color6" href="javascript:void(0);" onclick="setColor('yellow')"></a>
+          </li>
+        </ul>
+
+        <h6 class="title text-center pt-3 mb-0 border-top">Theme Option</h6>
+        <ul class="text-center list-unstyled mb-0">
+          <!-- <li class="d-grid"><a href="javascript:void(0)" class="btn btn-sm btn-block btn-primary rtl-version t-rtl-light mt-2" onclick="setTheme('style-rtl')">RTL</a></li>
+                    <li class="d-grid"><a href="javascript:void(0)" class="btn btn-sm btn-block btn-primary ltr-version t-ltr-light mt-2" onclick="setTheme('style')">LTR</a></li>
+                    <li class="d-grid"><a href="javascript:void(0)" class="btn btn-sm btn-block btn-primary dark-rtl-version t-rtl-dark mt-2" onclick="setTheme('style-dark-rtl')">RTL</a></li>
+                    <li class="d-grid"><a href="javascript:void(0)" class="btn btn-sm btn-block btn-primary dark-ltr-version t-ltr-dark mt-2" onclick="setTheme('style-dark')">LTR</a></li> -->
+          <li class="d-grid">
+            <a
+              href="javascript:void(0)"
+              class="btn btn-sm btn-block btn-dark dark-version t-dark mt-2"
+              onclick="setTheme('style-dark')"
+            >
+              Dark
+            </a>
+          </li>
+          <li class="d-grid">
+            <a
+              href="javascript:void(0)"
+              class="btn btn-sm btn-block btn-dark light-version t-light mt-2"
+              onclick="setTheme('style')"
+            >
+              Light
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="bottom">
+        <a href="javascript:void(0);" class="settings bg-white shadow d-block">
+          <i class="mdi mdi-cog ms-1 mdi-24px position-absolute mdi-spin text-primary"></i>
+        </a>
+      </div>
+    </div>
+  </body>
 </template>
+
+<style>
+.signup-box {
+  padding-top: 80px;
+}
+</style>

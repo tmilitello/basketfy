@@ -18,6 +18,9 @@ export default {
         this.baskets = response.data;
       });
     },
+    changeBaskets: function () {
+      this.$router.push("/baskets/" + 2);
+    },
   },
 };
 </script>
@@ -66,8 +69,8 @@ export default {
                 <tr v-for="basket in baskets" v-bind:key="basket.id">
                   <th class="py-3">
                     <a href="#!" class="align-items-center">
-                      <img src="images/coin/bitcoin.png" class="me-3" height="32" alt="" />
-                      <p class="mb-0 d-inline text-dark fw-normal h6">
+                      <!-- <img src="images/coin/bitcoin.png" class="me-3" height="32" alt="" /> -->
+                      <p class="mb-0 d-inline text-dark fw-normal h6" v-on:click="changeBaskets()">
                         {{ basket.name }}
                         <!-- <span class="text-muted">BTC</span> -->
                       </p>
